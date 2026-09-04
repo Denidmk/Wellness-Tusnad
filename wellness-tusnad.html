@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0F2A27">
+<title>Wellness Tușnad — Termálfürdő Băile Tușnad központjában</title>
+<meta name="description" content="Wellness Tușnad — fedett és kültéri medencék, szauna, gőzkabin és pihenés egész évben, a Csukás-tó partján, Băile Tușnad szívében.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230F2A27'/%3E%3Cpath d='M3 15c1.6 1.4 3.2 1.4 4.8 0s3.2-1.4 4.8 0 3.2 1.4 4.8 0 3.2-1.4 4.8 0' stroke='%23E3A542' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-950:#0F2A27;
+    --teal-900:#153B36;
+    --teal-800:#1D4E48;
+    --teal-700:#28675E;
+    --teal-500:#3FA79A;
+    --teal-300:#8FD2C6;
+    --sand-50:#F7F5EE;
+    --sand-100:#EFEADB;
+    --sand-200:#E2DAC1;
+    --ink:#131A17;
+    --ink-soft:#59645E;
+    --amber:#E3A542;
+    --amber-dark:#B87F2A;
+    --moss:#7C8B6F;
+    --white:#FFFFFF;
+    --line:rgba(19,26,23,0.10);
+    --line-light:rgba(255,255,255,0.20);
+    --shadow-sm:0 8px 24px -14px rgba(15,42,39,0.35);
+    --shadow-md:0 24px 60px -24px rgba(15,42,39,0.45);
+    --shadow-lg:0 40px 90px -30px rgba(15,42,39,0.55);
+    --r-sm:12px;
+    --r-md:20px;
+    --r-lg:30px;
+    --r-pill:999px;
+    --font-display:'Bricolage Grotesque', 'Inter', sans-serif;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --maxw:1220px;
+    --ease:cubic-bezier(.16,.8,.24,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--sand-50);
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;margin:0;color:var(--teal-950);letter-spacing:-0.01em;}
+  p{margin:0;}
+  button{font-family:inherit;cursor:pointer;}
+  input,textarea{font-family:inherit;}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  section{scroll-margin-top:110px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .reveal-stagger > *{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease), transform .6s var(--ease);}
+  .reveal-stagger.in-view > *{opacity:1;transform:translateY(0);}
+  .reveal-stagger.in-view > *:nth-child(1){transition-delay:.02s;}
+  .reveal-stagger.in-view > *:nth-child(2){transition-delay:.08s;}
+  .reveal-stagger.in-view > *:nth-child(3){transition-delay:.14s;}
+  .reveal-stagger.in-view > *:nth-child(4){transition-delay:.20s;}
+  .reveal-stagger.in-view > *:nth-child(5){transition-delay:.26s;}
+  .reveal-stagger.in-view > *:nth-child(6){transition-delay:.32s;}
+  .reveal-stagger.in-view > *:nth-child(7){transition-delay:.38s;}
+  .reveal-stagger.in-view > *:nth-child(8){transition-delay:.44s;}
+  .reveal-stagger.in-view > *:nth-child(9){transition-delay:.50s;}
+  .reveal-stagger.in-view > *:nth-child(10){transition-delay:.56s;}
+  .reveal-stagger.in-view > *:nth-child(11){transition-delay:.62s;}
+
+  /* ---------- Header (floating glass pill) ---------- */
+  .header-shell{position:fixed;top:18px;left:0;right:0;z-index:500;pointer-events:none;}
+  header.site-header{
+    pointer-events:auto;
+    max-width:var(--maxw);
+    margin:0 auto;
+    background:rgba(15,42,39,0.55);
+    backdrop-filter:blur(18px) saturate(160%);
+    -webkit-backdrop-filter:blur(18px) saturate(160%);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:var(--r-pill);
+    padding:10px 10px 10px 24px;
+    box-shadow:0 10px 34px -18px rgba(15,42,39,0.55);
+    transition:background .4s ease, box-shadow .4s ease, margin .4s ease, border-radius .4s ease;
+  }
+  header.site-header.scrolled{
+    background:rgba(15,42,39,0.86);
+    box-shadow:0 16px 40px -18px rgba(15,42,39,0.65);
+  }
+  header.site-header .row{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .brand{display:flex;flex-direction:column;line-height:1;}
+  .brand .brand-name{font-family:var(--font-display);font-size:19px;font-weight:700;color:var(--white);letter-spacing:-0.01em;}
+  .brand .brand-sub{font-size:10px;color:var(--sand-100);opacity:.75;margin-top:2px;}
+  nav.primary-nav{display:none;}
+  nav.primary-nav ul{display:flex;gap:26px;}
+  nav.primary-nav a{
+    font-size:13.5px;color:var(--white);opacity:.85;position:relative;padding:4px 0;
+    transition:opacity .3s ease;
+  }
+  nav.primary-nav a:hover{opacity:1;}
+  .header-right{display:flex;align-items:center;gap:10px;}
+  .lang-switch{display:flex;gap:2px;background:rgba(255,255,255,0.10);border-radius:var(--r-pill);padding:3px;}
+  .lang-switch button{
+    background:none;border:none;color:var(--white);font-size:11.5px;font-weight:500;letter-spacing:.3px;padding:7px 11px;border-radius:var(--r-pill);
+    opacity:.7;transition:opacity .25s ease, background .25s ease, color .25s ease;
+  }
+  .lang-switch button.active{opacity:1;background:var(--amber);color:var(--teal-950);}
+  .lang-switch button:hover{opacity:1;}
+  .cta-mini{
+    display:none;background:var(--amber);color:var(--teal-950);font-size:13px;font-weight:600;padding:11px 20px;
+    border-radius:var(--r-pill);transition:background .25s ease, transform .2s ease;
+  }
+  .cta-mini:hover{background:var(--white);transform:translateY(-1px);}
+  .menu-toggle{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;background:rgba(255,255,255,0.12);border:none;border-radius:50%;padding:0;flex:none;
+  }
+  .menu-toggle span{display:block;height:1.5px;width:14px;margin:0 auto;background:var(--white);transition:transform .3s ease, opacity .3s ease;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  @media (min-width:920px){
+    .header-shell{top:22px;}
+    header.site-header{padding:12px 14px 12px 30px;}
+    nav.primary-nav{display:block;}
+    .cta-mini{display:inline-block;}
+    .menu-toggle{display:none;}
+  }
+
+  .mobile-nav{
+    position:fixed;inset:0;background:var(--teal-950);z-index:490;
+    display:flex;flex-direction:column;justify-content:center;padding:32px;
+    transform:translateY(-100%);transition:transform .5s var(--ease);
+  }
+  .mobile-nav.open{transform:translateY(0);}
+  .mobile-nav ul{display:flex;flex-direction:column;gap:20px;}
+  .mobile-nav a{font-family:var(--font-display);font-size:32px;font-weight:600;color:var(--sand-50);}
+  .mobile-nav .cta-mini{display:inline-block;margin-top:22px;}
+  @media (min-width:920px){.mobile-nav{display:none;}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    background:var(--teal-950);
+    overflow:hidden;padding-top:150px;padding-bottom:120px;
+  }
+  .hero-mesh{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+  .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;}
+  .blob-1{width:520px;height:520px;background:radial-gradient(circle,var(--teal-500),transparent 70%);top:-160px;right:-120px;}
+  .blob-2{width:420px;height:420px;background:radial-gradient(circle,var(--amber),transparent 70%);bottom:-180px;left:-100px;opacity:.25;}
+  .blob-3{width:300px;height:300px;background:radial-gradient(circle,var(--teal-300),transparent 70%);bottom:10%;right:8%;opacity:.18;}
+  .hero-contours{position:absolute;inset:0;opacity:.35;pointer-events:none;}
+  .hero-contours svg{width:100%;height:100%;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-inner{max-width:640px;}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--sand-100);
+    background:rgba(255,255,255,0.08);border:1px solid var(--line-light);padding:8px 16px 8px 12px;border-radius:var(--r-pill);margin-bottom:26px;
+  }
+  .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);}
+  .hero h1{color:var(--white);font-size:clamp(40px,6.6vw,72px);line-height:1.02;letter-spacing:-0.02em;}
+  .hero-sub{color:var(--sand-100);opacity:.85;font-size:17.5px;margin-top:24px;max-width:460px;line-height:1.65;}
+  .hero-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:40px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:15px 28px;font-size:14.5px;font-weight:600;letter-spacing:.1px;
+    border-radius:var(--r-pill);transition:background .28s ease, color .28s ease, border-color .28s ease, transform .25s var(--ease), box-shadow .28s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--amber);color:var(--teal-950);box-shadow:0 14px 30px -14px rgba(227,165,66,0.55);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px -14px rgba(227,165,66,0.7);}
+  .btn-outline{border-color:var(--line-light);color:var(--white);background:rgba(255,255,255,0.06);}
+  .btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.12);transform:translateY(-2px);}
+  .link-underline{color:var(--sand-100);border-bottom:1px solid var(--line-light);padding-bottom:2px;font-size:14.5px;font-weight:500;transition:color .25s ease,border-color .25s ease;}
+  .link-underline:hover{color:var(--white);border-color:var(--white);}
+
+  .hero-stats{
+    margin-top:64px;display:flex;flex-wrap:wrap;gap:0;
+    background:rgba(255,255,255,0.06);border:1px solid var(--line-light);border-radius:var(--r-lg);
+    backdrop-filter:blur(14px);padding:6px;max-width:560px;
+  }
+  .hero-stats .hs-item{flex:1 1 120px;padding:18px 20px;text-align:left;}
+  .hero-stats .hs-item + .hs-item{border-left:1px solid var(--line-light);}
+  .hs-num{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--white);}
+  .hs-label{font-size:11.5px;color:var(--sand-100);opacity:.75;margin-top:3px;}
+
+  /* ---------- Section basics ---------- */
+  .section{padding:120px 0;}
+  .section-alt{background:var(--sand-100);}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-label{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.2px;
+    color:var(--amber-dark);margin-bottom:16px;background:rgba(227,165,66,0.12);padding:7px 14px;border-radius:var(--r-pill);
+  }
+  .section-head h2{font-size:clamp(30px,4.2vw,44px);}
+  .section-head p{color:var(--ink-soft);margin-top:16px;font-size:16.5px;max-width:520px;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;gap:22px;}
+  @media (min-width:860px){.about-grid{grid-template-columns:repeat(2,1fr);gap:22px;}}
+  .stat-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:28px 26px;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
+  }
+  .stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent;}
+  .stat-num{font-family:var(--font-display);font-size:38px;font-weight:700;color:var(--teal-800);}
+  .stat-label{font-size:13.5px;color:var(--ink-soft);margin-top:8px;}
+  .about-text-wrap{grid-column:1 / -1;background:var(--teal-950);border-radius:var(--r-lg);padding:44px;margin-top:6px;position:relative;overflow:hidden;}
+  .about-text-wrap::before{content:"";position:absolute;width:260px;height:260px;background:radial-gradient(circle,var(--teal-500),transparent 70%);opacity:.35;filter:blur(50px);top:-80px;right:-60px;}
+  .about-text-wrap p{position:relative;font-size:18px;color:var(--sand-100);line-height:1.8;max-width:760px;}
+
+  /* ---------- Services ---------- */
+  .pool-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+  @media (min-width:700px){.pool-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (min-width:1080px){.pool-grid{grid-template-columns:repeat(3,1fr);}}
+  .pool-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:26px;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .pool-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+  .pool-icon-box{
+    width:46px;height:46px;border-radius:var(--r-sm);background:var(--teal-950);color:var(--amber);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .pool-name{font-family:var(--font-display);font-size:19px;font-weight:600;color:var(--ink);}
+  .pool-specs{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+  .pool-spec-pill{font-size:12px;font-weight:500;color:var(--teal-800);background:var(--sand-100);padding:6px 12px;border-radius:var(--r-pill);}
+
+  .facilities-title{margin-top:60px;margin-bottom:18px;font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.2px;}
+  .tag-list{display:flex;flex-wrap:wrap;gap:10px;}
+  .tag{
+    font-size:13.5px;padding:10px 18px;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--ink-soft);
+    display:inline-flex;align-items:center;gap:8px;background:var(--white);
+    transition:border-color .25s ease, color .25s ease, background .25s ease;
+  }
+  .tag:hover{border-color:var(--teal-500);color:var(--teal-800);background:var(--sand-50);}
+  .tag .dot{width:5px;height:5px;border-radius:50%;background:var(--moss);}
+
+  /* ---------- Hours ---------- */
+  .hours-wrap{display:grid;gap:30px;}
+  @media (min-width:860px){.hours-wrap{grid-template-columns:1fr 1fr;align-items:stretch;}}
+  .hours-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:40px;}
+  .hours-table{width:100%;border-collapse:collapse;}
+  .hours-table td{padding:20px 4px;border-bottom:1px solid var(--line);font-size:16px;}
+  .hours-table tr:last-child td{border-bottom:none;}
+  .hours-table td:first-child{color:var(--ink-soft);}
+  .hours-table td:last-child{text-align:right;font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--teal-800);}
+  .hours-note{font-size:14px;color:var(--ink-soft);margin-top:20px;}
+  .hours-visual{
+    border-radius:var(--r-lg);background:var(--teal-950);position:relative;overflow:hidden;min-height:260px;
+    display:flex;align-items:flex-end;padding:32px;
+  }
+  .hours-visual .glow{position:absolute;width:220px;height:220px;background:radial-gradient(circle,var(--amber),transparent 70%);opacity:.3;filter:blur(50px);top:-60px;left:-40px;}
+  .hours-visual p{position:relative;color:var(--sand-100);font-family:var(--font-display);font-size:22px;font-weight:600;max-width:280px;line-height:1.3;}
+
+  /* ---------- Prices ---------- */
+  .price-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 8px;overflow:hidden;}
+  .price-table{width:100%;border-collapse:collapse;}
+  .price-table th{
+    text-align:left;font-weight:600;font-size:12px;letter-spacing:.3px;color:var(--ink-soft);
+    padding:16px 24px;
+  }
+  .price-table th:last-child, .price-table td:last-child{text-align:right;}
+  .price-table td{padding:18px 24px;border-top:1px solid var(--line);font-size:15.5px;}
+  .price-table tr:hover td{background:var(--sand-50);}
+  .price-table td:last-child{font-family:var(--font-display);font-weight:600;font-size:17px;color:var(--teal-800);white-space:nowrap;}
+  .price-note{font-size:13.5px;color:var(--ink-soft);margin-top:24px;max-width:640px;}
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;grid-auto-rows:150px;}
+  @media (min-width:640px){.gallery-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;}}
+  .g-tile{
+    position:relative;border-radius:var(--r-md);overflow:hidden;cursor:pointer;border:none;padding:0;
+    grid-row:span 2;transition:transform .4s var(--ease);
+  }
+  .g-tile.tall{grid-row:span 3;}
+  .g-tile:hover{transform:scale(1.02);}
+  .g-tile .g-fallback{width:100%;height:100%;position:relative;}
+  .g-tile .g-fallback::after{
+    content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%, rgba(255,255,255,.25), transparent 55%);
+  }
+  .g-tile .g-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:16px;
+    background:linear-gradient(0deg, rgba(15,42,39,.82), rgba(15,42,39,0));
+    color:var(--white);font-size:13px;font-weight:500;text-align:left;
+  }
+  .lightbox{
+    position:fixed;inset:0;background:rgba(15,25,23,.95);z-index:900;
+    display:none;align-items:center;justify-content:center;padding:40px 20px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox-inner{max-width:820px;width:100%;}
+  .lightbox-inner .g-fallback{width:100%;aspect-ratio:16/10;border-radius:var(--r-lg);}
+  .lightbox-cap{color:var(--sand-100);font-size:15px;margin-top:18px;text-align:center;font-family:var(--font-display);}
+  .lightbox-close{
+    position:fixed;top:26px;right:32px;background:rgba(255,255,255,0.1);border:1px solid var(--line-light);color:var(--white);
+    font-size:13px;letter-spacing:.3px;padding:10px 16px;border-radius:var(--r-pill);
+  }
+
+  /* ---------- Reviews ---------- */
+  .review-grid{display:grid;gap:20px;}
+  @media (min-width:860px){.review-grid{grid-template-columns:repeat(3,1fr);}}
+  .review-card{
+    padding:32px 28px;background:var(--white);border-radius:var(--r-md);border:1px solid var(--line);position:relative;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .review-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .review-quote-mark{font-family:var(--font-display);font-size:44px;color:var(--amber);line-height:1;opacity:.6;}
+  .review-quote{font-size:16.5px;color:var(--ink);line-height:1.6;margin-top:6px;}
+  .review-foot{display:flex;align-items:center;gap:12px;margin-top:22px;}
+  .review-avatar{
+    width:36px;height:36px;border-radius:50%;background:var(--teal-950);color:var(--sand-100);
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:14px;font-weight:600;
+  }
+  .review-name{font-size:13.5px;color:var(--ink-soft);}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;gap:22px;}
+  @media (min-width:900px){.contact-grid{grid-template-columns:0.85fr 1.15fr;}}
+  .contact-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;}
+  .contact-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .contact-item:first-child{padding-top:0;}
+  .contact-item:last-of-type{border-bottom:none;}
+  .contact-icon{
+    width:36px;height:36px;border-radius:var(--r-sm);background:var(--sand-100);color:var(--teal-800);flex:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-item strong{display:block;font-size:12px;color:var(--ink-soft);font-weight:600;margin-bottom:4px;}
+  .contact-item a,.contact-item span{font-size:15.5px;}
+  .social-row{display:flex;gap:12px;margin-top:24px;}
+  .social-row a{
+    width:40px;height:40px;background:var(--sand-100);border-radius:50%;display:flex;align-items:center;justify-content:center;
+    transition:background .25s ease, color .25s ease;color:var(--teal-800);
+  }
+  .social-row a:hover{background:var(--teal-950);color:var(--white);}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12.5px;font-weight:500;color:var(--ink-soft);margin-bottom:8px;}
+  .field input,.field textarea{
+    width:100%;border:1px solid var(--line);background:var(--sand-50);padding:14px 16px;font-size:15px;color:var(--ink);border-radius:var(--r-sm);
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .field input:focus,.field textarea:focus{border-color:var(--teal-500);background:var(--white);}
+  .field textarea{min-height:120px;resize:vertical;}
+  .form-note{font-size:13px;color:var(--teal-700);margin-top:14px;opacity:0;transition:opacity .3s ease;font-weight:500;}
+  .form-note.show{opacity:1;}
+  .map-frame{margin-top:22px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);}
+  .map-frame iframe{width:100%;height:340px;border:0;display:block;filter:grayscale(.2) contrast(1.05);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--teal-950);color:var(--sand-100);padding:80px 0 30px;border-radius:44px 44px 0 0;margin-top:-2px;position:relative;overflow:hidden;}
+  footer::before{content:"";position:absolute;width:400px;height:400px;background:radial-gradient(circle,var(--teal-500),transparent 70%);opacity:.18;filter:blur(70px);top:-140px;left:10%;}
+  footer .wrap{position:relative;}
+  .footer-grid{display:grid;gap:40px;}
+  @media (min-width:760px){.footer-grid{grid-template-columns:1.3fr 1fr 1fr 1fr;}}
+  footer h4{font-size:12.5px;letter-spacing:.3px;color:var(--white);margin-bottom:18px;font-weight:600;font-family:var(--font-body);}
+  .footer-brand .brand-name{font-family:var(--font-display);font-size:25px;font-weight:700;color:var(--white);}
+  .footer-brand p{margin-top:14px;font-size:14px;color:rgba(248,245,236,.65);max-width:260px;}
+  footer ul li{margin-bottom:11px;font-size:14px;color:rgba(248,245,236,.75);}
+  footer a:hover{color:var(--amber);}
+  .footer-bottom{
+    margin-top:64px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:12.5px;color:rgba(248,245,236,.5);
+  }
+
+  /* ---------- Cookie banner ---------- */
+  .cookie-banner{
+    position:fixed;left:20px;right:20px;bottom:20px;max-width:420px;z-index:800;
+    background:rgba(15,42,39,0.92);backdrop-filter:blur(14px);color:var(--sand-50);padding:24px;border-radius:var(--r-md);
+    box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.1);
+    transform:translateY(140%);transition:transform .55s var(--ease);
+  }
+  .cookie-banner.show{transform:translateY(0);}
+  .cookie-banner p{font-size:13.5px;line-height:1.6;color:rgba(248,245,236,.85);}
+  .cookie-banner .btn{margin-top:16px;padding:11px 22px;font-size:13px;}
+
+  /* ---------- Back to top ---------- */
+  .to-top{
+    position:fixed;right:24px;bottom:24px;width:48px;height:48px;border-radius:50%;
+    background:var(--teal-950);color:var(--white);border:none;display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transform:translateY(10px) scale(.9);transition:opacity .3s ease, transform .3s ease;z-index:600;
+    box-shadow:var(--shadow-md);
+  }
+  .to-top.show{opacity:1;pointer-events:auto;transform:translateY(0) scale(1);}
+  .to-top:hover{background:var(--teal-700);}
+
+  /* ---------- Chatbot ---------- */
+  .chat-launcher{
+    position:fixed;right:24px;bottom:86px;width:60px;height:60px;border-radius:50%;background:var(--amber);
+    border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 34px -14px rgba(227,165,66,0.6);z-index:700;
+    color:var(--teal-950);transition:transform .3s var(--ease);
+  }
+  .chat-launcher:hover{transform:scale(1.07) rotate(-4deg);}
+  .chat-panel{
+    position:fixed;right:24px;bottom:158px;width:min(360px,88vw);max-height:min(500px,70vh);z-index:700;
+    background:var(--white);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);display:none;flex-direction:column;overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .chat-panel.open{display:flex;}
+  .chat-head{background:var(--teal-950);color:var(--white);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;}
+  .chat-head span{font-family:var(--font-display);font-size:17px;font-weight:600;}
+  .chat-head button{background:rgba(255,255,255,.12);border:none;color:var(--white);width:28px;height:28px;border-radius:50%;font-size:14px;}
+  .chat-body{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:10px;background:var(--sand-50);}
+  .chat-msg{max-width:84%;padding:11px 14px;border-radius:16px;font-size:13.5px;line-height:1.5;}
+  .chat-msg.bot{background:var(--white);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px;}
+  .chat-msg.user{background:var(--teal-800);color:var(--white);align-self:flex-end;border-bottom-right-radius:4px;}
+  .chat-msg.typing{display:flex;gap:4px;align-items:center;padding:14px;}
+  .chat-msg.typing span{width:5px;height:5px;border-radius:50%;background:var(--ink-soft);opacity:.5;animation:typingBounce 1.1s infinite ease-in-out;}
+  .chat-msg.typing span:nth-child(2){animation-delay:.15s;}
+  .chat-msg.typing span:nth-child(3){animation-delay:.3s;}
+  @keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-4px);opacity:1;}}
+  .chat-input-row{display:flex;border-top:1px solid var(--line);padding:8px;gap:8px;}
+  .chat-input-row input{flex:1;border:none;padding:12px 14px;font-size:13.5px;background:var(--sand-50);border-radius:var(--r-pill);}
+  .chat-input-row button{background:var(--teal-950);color:var(--white);border:none;padding:0 18px;font-size:13px;font-weight:600;border-radius:var(--r-pill);}
+
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<div class="header-shell">
+  <header class="site-header" id="siteHeader">
+    <div class="row">
+      <a href="#top" class="brand">
+        <span class="brand-name">Wellness Tușnad</span>
+        <span class="brand-sub" data-t="brandSub">Băile Tușnad</span>
+      </a>
+      <nav class="primary-nav" aria-label="Fő navigáció">
+        <ul>
+          <li><a href="#about" data-t="nav.about">Rólunk</a></li>
+          <li><a href="#services" data-t="nav.services">Szolgáltatások</a></li>
+          <li><a href="#hours" data-t="nav.hours">Nyitvatartás</a></li>
+          <li><a href="#prices" data-t="nav.prices">Árak</a></li>
+          <li><a href="#gallery" data-t="nav.gallery">Galéria</a></li>
+          <li><a href="#reviews" data-t="nav.reviews">Vélemények</a></li>
+          <li><a href="#contact" data-t="nav.contact">Kapcsolat</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switch" role="group" aria-label="Nyelv">
+          <button data-lang="hu" class="active">HU</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="ro">RO</button>
+        </div>
+        <a href="#prices" class="cta-mini" data-t="hero.cta1">Árak megtekintése</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobil navigáció">
+  <ul>
+    <li><a href="#about" data-t="nav.about">Rólunk</a></li>
+    <li><a href="#services" data-t="nav.services">Szolgáltatások</a></li>
+    <li><a href="#hours" data-t="nav.hours">Nyitvatartás</a></li>
+    <li><a href="#prices" data-t="nav.prices">Árak</a></li>
+    <li><a href="#gallery" data-t="nav.gallery">Galéria</a></li>
+    <li><a href="#reviews" data-t="nav.reviews">Vélemények</a></li>
+    <li><a href="#contact" data-t="nav.contact">Kapcsolat</a></li>
+  </ul>
+  <a href="#prices" class="btn btn-primary cta-mini" data-t="hero.cta1">Árak megtekintése</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<div id="top"></div>
+<section class="hero">
+  <div class="hero-mesh" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-contours" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-50 650 C 200 600, 300 700, 550 640 S 900 560, 1250 640" stroke="rgba(248,245,236,0.14)" stroke-width="1.5" fill="none"/>
+      <path d="M-50 700 C 220 660, 320 750, 560 700 S 920 620, 1250 700" stroke="rgba(248,245,236,0.11)" stroke-width="1.5" fill="none"/>
+      <path d="M-50 750 C 240 720, 340 800, 580 760 S 940 690, 1250 760" stroke="rgba(248,245,236,0.09)" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="hero-eyebrow"><span class="dot"></span><span data-t="hero.eyebrow">A Csukás-tó partján</span></span>
+      <h1 data-t="hero.h1">Termálvíz, csend és a Hargita ölelése</h1>
+      <p class="hero-sub" data-t="hero.sub">Fedett és kültéri medencék, szauna és pihenés egész évben, Băile Tușnad szívében.</p>
+      <div class="hero-ctas">
+        <a href="#prices" class="btn btn-primary" data-t="hero.cta1">Árak megtekintése</a>
+        <a href="#services" class="btn btn-outline" data-t="hero.cta2">Szolgáltatásaink</a>
+        <a href="#contact" class="link-underline" data-t="hero.cta3">Kapcsolat</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hs-item"><div class="hs-num">2013</div><div class="hs-label" id="hsLabel1"></div></div>
+        <div class="hs-item"><div class="hs-num">2244 m²</div><div class="hs-label" id="hsLabel2"></div></div>
+        <div class="hs-item"><div class="hs-num">200+</div><div class="hs-label" id="hsLabel3"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label" data-t="about.label">Bemutatkozás</span>
+      <h2 data-t="about.title">Rólunk</h2>
+    </div>
+    <div class="about-grid reveal-stagger" id="aboutGrid"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section section-alt" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label" data-t="services.label">Élményeink</span>
+      <h2 data-t="services.title">Medencék és szolgáltatások</h2>
+      <p data-t="services.intro">Hőfok és mélység szerint válogatva, mindenkinek megfelelő élmény.</p>
+    </div>
+    <div class="pool-grid reveal-stagger" id="poolGrid"></div>
+    <div class="facilities-title reveal" id="facilitiesTitle"></div>
+    <div class="tag-list reveal" id="facilitiesList"></div>
+  </div>
+</section>
+
+<!-- ============ HOURS ============ -->
+<section class="section" id="hours">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label" data-t="hours.label">Mikor várunk</span>
+      <h2 data-t="hours.title">Nyitvatartás</h2>
+    </div>
+    <div class="hours-wrap reveal">
+      <div class="hours-card">
+        <table class="hours-table" id="hoursTable"></table>
+        <p class="hours-note" data-t="hours.note">A pénztár a zárás előtt egy órával zár.</p>
+      </div>
+      <div class="hours-visual">
+        <div class="glow"></div>
+        <p id="hoursVisualText"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICES ============ -->
+<section class="section section-alt" id="prices">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label" data-t="prices.label">Belépők</span>
+      <h2 data-t="prices.title">Árak</h2>
+    </div>
+    <div class="price-card reveal">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th data-t="prices.colTicket">Jegytípus</th>
+            <th data-t="prices.colPrice">Ár</th>
+          </tr>
+        </thead>
+        <tbody id="priceRows"></tbody>
+      </table>
+    </div>
+    <p class="price-note reveal" data-t="prices.note">Az árak tájékoztató jellegűek és változhatnak. Egyszerre maximum 200 fő tartózkodhat a fürdő területén.</p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label" data-t="gallery.label">Hangulat</span>
+      <h2 data-t="gallery.title">Galéria</h2>
+    </div>
+    <div class="gallery-grid reveal-stagger" id="galleryGrid"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" data-t="gallery.close">Bezárás ✕</button>
+  <div class="lightbox-inner">
+    <div class="g-fallback" id="lightboxImg"></div>
+    <p class="lightbox-cap" id="lightboxCap"></p>
+  </div>
+</div>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section section-alt" id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label" data-t="reviews.label">Vendégeink mondták</span>
+      <h2 data-t="reviews.title">Vélemények</h2>
+    </div>
+    <div class="review-grid reveal-stagger" id="reviewGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-label" data-t="contact.label">Vegye fel velünk a kapcsolatot</span>
+      <h2 data-t="contact.title">Kapcsolat</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-card">
+        <div class="contact-item">
+          <span class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span>
+          <div>
+            <strong data-t="contact.addressLabel">Cím</strong>
+            <span>Str. Ciucaș nr. 9, 535100 Băile Tușnad, Hargita megye, Románia</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5c1 2.3 2.7 4 5 5l1.5-2 5 2v2c0 1-1 2-2 2C9.5 20.5 4 15 4 5Z"/></svg></span>
+          <div>
+            <strong data-t="contact.phoneLabel">Telefon</strong>
+            <a href="tel:+40756118479">+40 756 118 479</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 6.5 8 6 8-6"/></svg></span>
+          <div>
+            <strong data-t="contact.emailLabel">E-mail</strong>
+            <a href="mailto:office.wellnesstusnad@gmail.com">office.wellnesstusnad@gmail.com</a>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <form id="contactForm">
+          <div class="field">
+            <label for="cf-name" data-t="contact.formName">Név</label>
+            <input id="cf-name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="cf-email" data-t="contact.formEmail">E-mail cím</label>
+            <input id="cf-email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="cf-msg" data-t="contact.formMessage">Üzenet</label>
+            <textarea id="cf-msg" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="background:var(--teal-800);color:var(--white);box-shadow:none;" data-t="contact.formSubmit">Küldés</button>
+          <p class="form-note" id="formNote" data-t="contact.formThanks">Köszönjük! Hamarosan válaszolunk üzenetére.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="map-frame reveal">
+      <iframe src="https://www.google.com/maps?q=Str.+Ciuca%C8%99+9%2C+535100+B%C4%83ile+Tu%C8%99nad%2C+Rom%C3%A2nia&output=embed" title="Wellness Tușnad — térkép" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-name">Wellness Tușnad</span>
+        <p data-t="footer.tagline">A Csukás-tó partján, Băile Tușnad szívében.</p>
+      </div>
+      <div>
+        <h4 data-t="footer.hoursTitle">Nyitvatartás</h4>
+        <ul id="footerHours"></ul>
+      </div>
+      <div>
+        <h4 data-t="footer.linksTitle">Gyorslinkek</h4>
+        <ul>
+          <li><a href="#services" data-t="nav.services">Szolgáltatások</a></li>
+          <li><a href="#prices" data-t="nav.prices">Árak</a></li>
+          <li><a href="#gallery" data-t="nav.gallery">Galéria</a></li>
+          <li><a href="#contact" data-t="nav.contact">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-t="footer.legalTitle">Jogi</h4>
+        <ul>
+          <li><a href="#" data-t="footer.legal1">Adatvédelmi tájékoztató</a></li>
+          <li><a href="#" data-t="footer.legal2">Házirend</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Wellness Tușnad. <span data-t="footer.rights">Minden jog fenntartva.</span></span>
+      <span data-t="footer.madeWith">Str. Ciucaș nr. 9, Băile Tușnad</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ COOKIE BANNER ============ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p data-t="cookie.text">Weboldalunk sütiket használ a jobb felhasználói élmény érdekében.</p>
+  <button class="btn btn-primary" id="cookieAccept" data-t="cookie.accept">Elfogadom</button>
+</div>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="to-top" id="toTop" aria-label="Vissza a tetejére">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ============ CHATBOT ============ -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Chat">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3-.5L4 20l1-4a8.3 8.3 0 0 1-1-4A8.4 8.4 0 0 1 12.9 3 8.5 8.5 0 0 1 21 11.5Z"/></svg>
+</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <span data-t="chatbot.title">Kérdése van?</span>
+    <button id="chatClose" aria-label="Bezárás">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input-row">
+    <input id="chatInput" type="text" data-t-placeholder="chatbot.placeholder" placeholder="Írja ide kérdését…">
+    <button id="chatSend" data-t="chatbot.send">Küldés</button>
+  </div>
+</div>
+
+<script>
+/* ===================== DATA ===================== */
+const DATA = {
+  hu: {
+    brandSub:"Băile Tușnad",
+    nav:{about:"Rólunk",services:"Szolgáltatások",hours:"Nyitvatartás",prices:"Árak",gallery:"Galéria",reviews:"Vélemények",contact:"Kapcsolat"},
+    hero:{
+      eyebrow:"A Csukás-tó partján",
+      h1:"Termálvíz, csend és a Hargita ölelése",
+      sub:"Fedett és kültéri medencék, szauna és pihenés egész évben, Băile Tușnad szívében.",
+      cta1:"Árak megtekintése", cta2:"Szolgáltatásaink", cta3:"Kapcsolat",
+      hs1:"Megnyitottunk", hs2:"Teljes élménytér", hs3:"Vendég egyszerre"
+    },
+    about:{
+      label:"Bemutatkozás", title:"Rólunk",
+      stats:[
+        {n:"2013",l:"Megnyitottunk, december 21-én"},
+        {n:"2044 m²",l:"Fedett élménytér"},
+        {n:"200 m²",l:"Kültéri terasz és medence"},
+        {n:"200 fő",l:"Egyszerre fogadott vendég"}
+      ],
+      text:"2013. december 21-én nyitottuk meg kapuinkat Băile Tușnad központjában, közvetlenül a Csukás-tó mellett. Modern vízkezelő rendszerrel felszerelt fürdőnkben egész évben, minden korosztály számára várjuk vendégeinket, gyerekbarát környezetben. A fürdő területén ingyenes parkoló áll vendégeink rendelkezésére."
+    },
+    services:{
+      label:"Élményeink", title:"Medencék és szolgáltatások",
+      intro:"Hőfok és mélység szerint válogatva, mindenkinek megfelelő élmény.",
+      pools:[
+        {name:"Gyerekmedence", temp:"30–32 °C", depth:"0,20–0,40 m"},
+        {name:"Úszómedence", temp:"26–28 °C", depth:"1,20 m"},
+        {name:"Termálvizes ülőmedence", temp:"34–36 °C", depth:"0,95 m"},
+        {name:"Élményelemes / hidromasszázsos medence", temp:"28–30 °C", depth:"0,95–1,00 m"},
+        {name:"Jacuzzi (max. 8 fő)", temp:"34–36 °C", depth:"0,90 m"},
+        {name:"Kültéri medence", temp:"télen is nyitva", depth:"szép kilátással"}
+      ],
+      facilitiesTitle:"Emellett elérhető",
+      facilities:["Finn szauna","Gőzkabin","Infraszauna","Sókamra","Masszázsszalon","Pihenőhely","Bár & büfé","Öltözők és zuhanyzók","Napágyak","Ingyenes parkoló"]
+    },
+    hours:{
+      label:"Mikor várunk", title:"Nyitvatartás",
+      rows:[{d:"Hétfő",t:"14:00 – 21:00"},{d:"Kedd – Vasárnap",t:"10:00 – 21:00"}],
+      note:"A pénztár a zárás előtt egy órával zár.",
+      visual:"Egész évben nyitva — a téli fürdőzés a kültéri medencében külön élmény."
+    },
+    prices:{
+      label:"Belépők", title:"Árak", colTicket:"Jegytípus", colPrice:"Ár",
+      rows:[
+        {label:"Általános 3 órás belépő – felnőtt", price:"60 lei"},
+        {label:"Általános 3 órás belépő – gyerek (150 cm alatt)", price:"30 lei"},
+        {label:"3 év alatti gyerek", price:"ingyenes"},
+        {label:"Nyugdíjas kedvezmény", price:"kedvezményesen, a pénztárnál"},
+        {label:"Helyi lakosok kedvezménye", price:"kedvezményesen, a pénztárnál"},
+        {label:"Egész napos belépő", price:"érdeklődjön a pénztárnál"},
+        {label:"Bérlet – 10 alkalom", price:"érdeklődjön a pénztárnál"},
+        {label:"Bérlet – 20 alkalom", price:"érdeklődjön a pénztárnál"},
+        {label:"Helyi lakosoknak – havi bérlet", price:"érdeklődjön a pénztárnál"},
+        {label:"Ajándékjegy", price:"érdeklődjön a pénztárnál"},
+        {label:"Túllépési díj (óránként)", price:"érdeklődjön a pénztárnál"}
+      ],
+      note:"Az árak tájékoztató jellegűek és változhatnak. Egyszerre maximum 200 fő tartózkodhat a fürdő területén."
+    },
+    gallery:{
+      label:"Hangulat", title:"Galéria", close:"Bezárás ✕",
+      items:[
+        {cap:"Kültéri medence", tall:true},{cap:"Gyerekmedence"},{cap:"Finn szauna"},{cap:"Jacuzzi", tall:true},
+        {cap:"Napnyugta a Csukás-tónál"},{cap:"Pihenő terasz"},{cap:"Bár & büfé"},{cap:"Téli fürdőzés", tall:true}
+      ]
+    },
+    reviews:{
+      label:"Vendégeink mondták", title:"Vélemények",
+      items:[
+        {q:"Csodálatos hely a Hargitában, a gyerekek imádják a medencéket.", n:"Andrea"},
+        {q:"A termálvizes ülőmedence után semmi más nem kell a tökéletes délutánhoz.", n:"Zsolt"},
+        {q:"Tiszta, barátságos személyzet, és a kültéri medence télen egészen különleges élmény.", n:"Emese"}
+      ]
+    },
+    contact:{
+      label:"Vegye fel velünk a kapcsolatot", title:"Kapcsolat",
+      addressLabel:"Cím", phoneLabel:"Telefon", emailLabel:"E-mail",
+      formName:"Név", formEmail:"E-mail cím", formMessage:"Üzenet", formSubmit:"Küldés",
+      formThanks:"Köszönjük! Hamarosan válaszolunk üzenetére."
+    },
+    footer:{
+      tagline:"A Csukás-tó partján, Băile Tușnad szívében.",
+      hoursTitle:"Nyitvatartás", linksTitle:"Gyorslinkek", legalTitle:"Jogi",
+      legal1:"Adatvédelmi tájékoztató", legal2:"Házirend",
+      rights:"Minden jog fenntartva.", madeWith:"Str. Ciucaș nr. 9, Băile Tușnad"
+    },
+    cookie:{text:"Weboldalunk sütiket használ a jobb felhasználói élmény érdekében.", accept:"Elfogadom"},
+    chatbot:{
+      title:"Kérdése van?", placeholder:"Írja ide kérdését…", send:"Küldés",
+      greeting:"Szia! Segíthetek a nyitvatartással, árakkal, szolgáltatásokkal vagy az elérhetőségeinkkel kapcsolatban.",
+      hours:"Nyitvatartás — Hétfő: 14:00–21:00, Kedd–Vasárnap: 10:00–21:00.",
+      prices:"A belépő ára felnőtteknek 60 lei, gyerekeknek (150 cm alatt) 30 lei, 3 év alatt ingyenes. Bővebben az Árak menüpontban.",
+      services:"Medencéink: gyerekmedence, úszómedence, termálvizes ülőmedence, élményelemes medence, jacuzzi és kültéri medence — plusz szauna, gőzkabin és sókamra.",
+      contact:"Elérhet minket telefonon a +40 756 118 479 számon, vagy e-mailben: office.wellnesstusnad@gmail.com.",
+      parking:"Igen, ingyenes parkoló áll vendégeink rendelkezésére a fürdő területén.",
+      hello:"Szia! Miben segíthetek?",
+      fallback:"Ebben egyelőre nem tudok segíteni, de hívjon minket a +40 756 118 479 számon, örömmel válaszolunk!"
+    }
+  },
+
+  en: {
+    brandSub:"Băile Tușnad",
+    nav:{about:"About",services:"Facilities",hours:"Hours",prices:"Prices",gallery:"Gallery",reviews:"Reviews",contact:"Contact"},
+    hero:{
+      eyebrow:"On the shore of Lake Csukás",
+      h1:"Thermal water, stillness, and the Hargita mountains",
+      sub:"Indoor and outdoor pools, saunas and rest, open all year round in the heart of Băile Tușnad.",
+      cta1:"See prices", cta2:"Our facilities", cta3:"Contact",
+      hs1:"Opened", hs2:"Total experience space", hs3:"Guests at once"
+    },
+    about:{
+      label:"About us", title:"About",
+      stats:[
+        {n:"2013",l:"Opened on 21 December"},
+        {n:"2,044 m²",l:"Indoor space"},
+        {n:"200 m²",l:"Outdoor terrace & pool"},
+        {n:"200",l:"Guests at a time"}
+      ],
+      text:"We opened our doors on 21 December 2013, in the centre of Băile Tușnad, right next to Lake Csukás. Equipped with a modern water-treatment system, we welcome guests of every age, all year round, in a family-friendly setting. Free parking is available on site."
+    },
+    services:{
+      label:"Our facilities", title:"Pools & facilities",
+      intro:"Sorted by temperature and depth, so there's something for everyone.",
+      pools:[
+        {name:"Children's pool", temp:"30–32 °C", depth:"0.20–0.40 m"},
+        {name:"Swimming pool", temp:"26–28 °C", depth:"1.20 m"},
+        {name:"Thermal sitting pool", temp:"34–36 °C", depth:"0.95 m"},
+        {name:"Adventure & hydromassage pool", temp:"28–30 °C", depth:"0.95–1.00 m"},
+        {name:"Jacuzzi (max. 8 people)", temp:"34–36 °C", depth:"0.90 m"},
+        {name:"Outdoor pool", temp:"open in winter too", depth:"lovely views"}
+      ],
+      facilitiesTitle:"Also available",
+      facilities:["Finnish sauna","Steam cabin","Infrared sauna","Salt room","Massage salon","Relaxation area","Bar & snack bar","Changing rooms & showers","Sun loungers","Free parking"]
+    },
+    hours:{
+      label:"When we're open", title:"Opening hours",
+      rows:[{d:"Monday",t:"2:00 PM – 9:00 PM"},{d:"Tuesday – Sunday",t:"10:00 AM – 9:00 PM"}],
+      note:"The ticket office closes one hour before closing time.",
+      visual:"Open all year — winter bathing in the outdoor pool is an experience of its own."
+    },
+    prices:{
+      label:"Admission", title:"Prices", colTicket:"Ticket type", colPrice:"Price",
+      rows:[
+        {label:"General 3-hour ticket – adult", price:"60 lei"},
+        {label:"General 3-hour ticket – child (under 150 cm)", price:"30 lei"},
+        {label:"Child under 3 years", price:"free"},
+        {label:"Senior discount", price:"discounted, at the ticket office"},
+        {label:"Local resident discount", price:"discounted, at the ticket office"},
+        {label:"Full-day ticket", price:"ask at the ticket office"},
+        {label:"10-visit pass", price:"ask at the ticket office"},
+        {label:"20-visit pass", price:"ask at the ticket office"},
+        {label:"Local monthly pass", price:"ask at the ticket office"},
+        {label:"Gift ticket", price:"ask at the ticket office"},
+        {label:"Overtime fee (per hour)", price:"ask at the ticket office"}
+      ],
+      note:"Prices are indicative and may change. A maximum of 200 guests may be on site at any one time."
+    },
+    gallery:{
+      label:"Atmosphere", title:"Gallery", close:"Close ✕",
+      items:[
+        {cap:"Outdoor pool", tall:true},{cap:"Children's pool"},{cap:"Finnish sauna"},{cap:"Jacuzzi", tall:true},
+        {cap:"Sunset over Lake Csukás"},{cap:"Relaxation terrace"},{cap:"Bar & snack bar"},{cap:"Winter bathing", tall:true}
+      ]
+    },
+    reviews:{
+      label:"Our guests say", title:"Reviews",
+      items:[
+        {q:"A wonderful place in the Hargita mountains — the kids love the pools.", n:"Andrea"},
+        {q:"After the thermal sitting pool, nothing else is needed for a perfect afternoon.", n:"Zsolt"},
+        {q:"Clean, friendly staff, and the outdoor pool in winter is a truly special experience.", n:"Emese"}
+      ]
+    },
+    contact:{
+      label:"Get in touch", title:"Contact",
+      addressLabel:"Address", phoneLabel:"Phone", emailLabel:"Email",
+      formName:"Name", formEmail:"Email address", formMessage:"Message", formSubmit:"Send",
+      formThanks:"Thank you! We'll get back to you soon."
+    },
+    footer:{
+      tagline:"On the shore of Lake Csukás, in the heart of Băile Tușnad.",
+      hoursTitle:"Opening hours", linksTitle:"Quick links", legalTitle:"Legal",
+      legal1:"Privacy policy", legal2:"House rules",
+      rights:"All rights reserved.", madeWith:"Str. Ciucaș nr. 9, Băile Tușnad"
+    },
+    cookie:{text:"Our website uses cookies to improve your experience.", accept:"Accept"},
+    chatbot:{
+      title:"Got a question?", placeholder:"Type your question…", send:"Send",
+      greeting:"Hi! I can help with opening hours, prices, facilities, or how to reach us.",
+      hours:"Opening hours — Monday: 2:00 PM–9:00 PM, Tuesday–Sunday: 10:00 AM–9:00 PM.",
+      prices:"Admission is 60 lei for adults, 30 lei for children under 150 cm, and free under 3. See the Prices section for more.",
+      services:"Our pools: children's pool, swimming pool, thermal sitting pool, adventure pool, jacuzzi and outdoor pool — plus sauna, steam cabin and salt room.",
+      contact:"You can reach us by phone at +40 756 118 479, or by email at office.wellnesstusnad@gmail.com.",
+      parking:"Yes, free parking is available on site for our guests.",
+      hello:"Hi there! How can I help?",
+      fallback:"I can't help with that just yet — please call us on +40 756 118 479 and we'll be happy to answer."
+    }
+  },
+
+  ro: {
+    brandSub:"Băile Tușnad",
+    nav:{about:"Despre noi",services:"Servicii",hours:"Program",prices:"Tarife",gallery:"Galerie",reviews:"Recenzii",contact:"Contact"},
+    hero:{
+      eyebrow:"Pe malul lacului Ciucaș",
+      h1:"Apă termală, liniște și îmbrățișarea Harghitei",
+      sub:"Bazine interioare și exterioare, saune și relaxare, deschis tot anul în inima Băilor Tușnad.",
+      cta1:"Vezi tarifele", cta2:"Serviciile noastre", cta3:"Contact",
+      hs1:"Deschidere", hs2:"Spațiu total", hs3:"Oaspeți simultan"
+    },
+    about:{
+      label:"Despre noi", title:"Despre noi",
+      stats:[
+        {n:"2013",l:"Deschidere pe 21 decembrie"},
+        {n:"2044 m²",l:"Spațiu interior"},
+        {n:"200 m²",l:"Terasă și bazin exterior"},
+        {n:"200",l:"Oaspeți simultan"}
+      ],
+      text:"Ne-am deschis porțile pe 21 decembrie 2013, în centrul stațiunii Băile Tușnad, chiar lângă lacul Ciucaș. Dotați cu un sistem modern de tratare a apei, întâmpinăm oaspeți de toate vârstele, tot anul, într-un cadru prietenos pentru familii. Parcarea este gratuită pentru vizitatorii noștri."
+    },
+    services:{
+      label:"Serviciile noastre", title:"Bazine și servicii",
+      intro:"Sortate după temperatură și adâncime, pentru fiecare vârstă și preferință.",
+      pools:[
+        {name:"Bazin pentru copii", temp:"30–32 °C", depth:"0,20–0,40 m"},
+        {name:"Bazin de înot", temp:"26–28 °C", depth:"1,20 m"},
+        {name:"Bazin termal cu locuri pe scaune", temp:"34–36 °C", depth:"0,95 m"},
+        {name:"Bazin cu elemente de hidromasaj", temp:"28–30 °C", depth:"0,95–1,00 m"},
+        {name:"Jacuzzi (max. 8 persoane)", temp:"34–36 °C", depth:"0,90 m"},
+        {name:"Bazin exterior", temp:"deschis și iarna", depth:"priveliște frumoasă"}
+      ],
+      facilitiesTitle:"De asemenea disponibile",
+      facilities:["Saună finlandeză","Cameră cu aburi","Saună cu infraroșu","Cameră de sare","Salon de masaj","Zonă de relaxare","Bar & bufet","Vestiare și dușuri","Șezlonguri","Parcare gratuită"]
+    },
+    hours:{
+      label:"Program", title:"Program de funcționare",
+      rows:[{d:"Luni",t:"14:00 – 21:00"},{d:"Marți – Duminică",t:"10:00 – 21:00"}],
+      note:"Casa de bilete se închide cu o oră înainte de închidere.",
+      visual:"Deschis tot anul — scăldatul de iarnă în bazinul exterior este o experiență aparte."
+    },
+    prices:{
+      label:"Intrare", title:"Tarife", colTicket:"Tip bilet", colPrice:"Preț",
+      rows:[
+        {label:"Bilet general 3 ore – adult", price:"60 lei"},
+        {label:"Bilet general 3 ore – copil (sub 150 cm)", price:"30 lei"},
+        {label:"Copil sub 3 ani", price:"gratuit"},
+        {label:"Reducere pensionari", price:"preț redus, la casă"},
+        {label:"Reducere localnici", price:"preț redus, la casă"},
+        {label:"Bilet zi întreagă", price:"întrebați la casă"},
+        {label:"Abonament 10 intrări", price:"întrebați la casă"},
+        {label:"Abonament 20 intrări", price:"întrebați la casă"},
+        {label:"Abonament lunar localnici", price:"întrebați la casă"},
+        {label:"Bilet cadou", price:"întrebați la casă"},
+        {label:"Taxă depășire (pe oră)", price:"întrebați la casă"}
+      ],
+      note:"Tarifele sunt orientative și pot fi modificate. Un număr maxim de 200 de persoane pot fi prezente simultan."
+    },
+    gallery:{
+      label:"Atmosferă", title:"Galerie", close:"Închide ✕",
+      items:[
+        {cap:"Bazin exterior", tall:true},{cap:"Bazin pentru copii"},{cap:"Saună finlandeză"},{cap:"Jacuzzi", tall:true},
+        {cap:"Apus la lacul Ciucaș"},{cap:"Terasă de relaxare"},{cap:"Bar & bufet"},{cap:"Scăldat de iarnă", tall:true}
+      ]
+    },
+    reviews:{
+      label:"Oaspeții noștri spun", title:"Recenzii",
+      items:[
+        {q:"Un loc minunat în Harghita — copiii adoră bazinele.", n:"Andrea"},
+        {q:"După bazinul termal cu locuri pe scaune, nu mai ai nevoie de nimic pentru o după-amiază perfectă.", n:"Zsolt"},
+        {q:"Personal curat și prietenos, iar bazinul exterior iarna este o experiență cu totul specială.", n:"Emese"}
+      ]
+    },
+    contact:{
+      label:"Contactați-ne", title:"Contact",
+      addressLabel:"Adresă", phoneLabel:"Telefon", emailLabel:"E-mail",
+      formName:"Nume", formEmail:"Adresă de e-mail", formMessage:"Mesaj", formSubmit:"Trimite",
+      formThanks:"Mulțumim! Vă vom răspunde în curând."
+    },
+    footer:{
+      tagline:"Pe malul lacului Ciucaș, în inima Băilor Tușnad.",
+      hoursTitle:"Program", linksTitle:"Linkuri rapide", legalTitle:"Legal",
+      legal1:"Politica de confidențialitate", legal2:"Regulament intern",
+      rights:"Toate drepturile rezervate.", madeWith:"Str. Ciucaș nr. 9, Băile Tușnad"
+    },
+    cookie:{text:"Site-ul nostru folosește cookie-uri pentru o experiență mai bună.", accept:"Accept"},
+    chatbot:{
+      title:"Aveți o întrebare?", placeholder:"Scrieți întrebarea…", send:"Trimite",
+      greeting:"Bună! Vă pot ajuta cu programul, tarifele, serviciile sau datele de contact.",
+      hours:"Program — Luni: 14:00–21:00, Marți–Duminică: 10:00–21:00.",
+      prices:"Biletul costă 60 lei pentru adulți, 30 lei pentru copii (sub 150 cm), gratuit sub 3 ani. Detalii la secțiunea Tarife.",
+      services:"Bazinele noastre: bazin pentru copii, bazin de înot, bazin termal cu locuri pe scaune, bazin cu hidromasaj, jacuzzi și bazin exterior — plus saună, cameră cu aburi și cameră de sare.",
+      contact:"Ne puteți contacta telefonic la +40 756 118 479, sau pe e-mail: office.wellnesstusnad@gmail.com.",
+      parking:"Da, parcarea este gratuită pentru oaspeții noștri.",
+      hello:"Bună! Cu ce vă pot ajuta?",
+      fallback:"Nu vă pot ajuta încă cu asta — sunați-ne la +40 756 118 479 și vă răspundem cu plăcere."
+    }
+  }
+};
+
+let currentLang = "hu";
+
+/* ===================== helpers ===================== */
+function getPath(obj, path){
+  return path.split(".").reduce((o,k)=> (o||{})[k], obj);
+}
+
+const poolIcon = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 17c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0"/><path d="M2 12c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0"/><path d="M12 3c-1.7 1.8-1.7 3.6 0 5.4"/></svg>`;
+
+const gradients = [
+  "radial-gradient(circle at 30% 20%, #3FA79A, #0F2A27 75%)",
+  "radial-gradient(circle at 70% 30%, #E3A542, #7C8B6F 75%)",
+  "radial-gradient(circle at 40% 70%, #28675E, #0F2A27 75%)",
+  "radial-gradient(circle at 60% 40%, #8FD2C6, #153B36 75%)",
+  "radial-gradient(circle at 30% 60%, #B87F2A, #1D4E48 75%)",
+  "radial-gradient(circle at 50% 30%, #1D4E48, #E3A542 120%)",
+  "radial-gradient(circle at 40% 40%, #0F2A27, #3FA79A 130%)",
+  "radial-gradient(circle at 60% 60%, #28675E, #B87F2A 130%)"
+];
+
+function render(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const d = DATA[lang];
+
+  document.querySelectorAll("[data-t]").forEach(el=>{
+    const val = getPath(d, el.getAttribute("data-t"));
+    if(val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll("[data-t-placeholder]").forEach(el=>{
+    const val = getPath(d, el.getAttribute("data-t-placeholder"));
+    if(val !== undefined) el.setAttribute("placeholder", val);
+  });
+
+  document.querySelectorAll(".lang-switch button").forEach(b=>{
+    b.classList.toggle("active", b.dataset.lang === lang);
+  });
+
+  // hero mini stats
+  document.getElementById("hsLabel1").textContent = d.hero.hs1;
+  document.getElementById("hsLabel2").textContent = d.hero.hs2;
+  document.getElementById("hsLabel3").textContent = d.hero.hs3;
+
+  // about
+  const aboutGrid = document.getElementById("aboutGrid");
+  aboutGrid.innerHTML = d.about.stats.map(s=>`
+    <div class="stat-card"><div class="stat-num">${s.n}</div><div class="stat-label">${s.l}</div></div>
+  `).join("") + `<div class="about-text-wrap"><p>${d.about.text}</p></div>`;
+  observeReveal(aboutGrid);
+
+  // pools
+  const poolGrid = document.getElementById("poolGrid");
+  poolGrid.innerHTML = d.services.pools.map(p=>`
+    <div class="pool-card">
+      <div class="pool-icon-box">${poolIcon}</div>
+      <div class="pool-name">${p.name}</div>
+      <div class="pool-specs">
+        <span class="pool-spec-pill">${p.temp}</span>
+        <span class="pool-spec-pill">${p.depth}</span>
+      </div>
+    </div>
+  `).join("");
+  observeReveal(poolGrid);
+  document.getElementById("facilitiesTitle").textContent = d.services.facilitiesTitle;
+  document.getElementById("facilitiesList").innerHTML = d.services.facilities.map(f=>`
+    <span class="tag"><span class="dot"></span>${f}</span>
+  `).join("");
+
+  // hours
+  document.getElementById("hoursTable").innerHTML = d.hours.rows.map(r=>`
+    <tr><td>${r.d}</td><td>${r.t}</td></tr>
+  `).join("");
+  document.getElementById("hoursVisualText").textContent = d.hours.visual;
+  document.getElementById("footerHours").innerHTML = d.hours.rows.map(r=>`<li>${r.d}: ${r.t}</li>`).join("");
+
+  // prices
+  document.getElementById("priceRows").innerHTML = d.prices.rows.map(r=>`
+    <tr><td>${r.label}</td><td>${r.price}</td></tr>
+  `).join("");
+
+  // gallery
+  const galleryGrid = document.getElementById("galleryGrid");
+  galleryGrid.innerHTML = d.gallery.items.map((g,i)=>`
+    <button class="g-tile ${g.tall ? 'tall':''}" data-idx="${i}" aria-label="${g.cap}">
+      <div class="g-fallback" style="background:${gradients[i % gradients.length]}"></div>
+      <span class="g-cap">${g.cap}</span>
+    </button>
+  `).join("");
+  observeReveal(galleryGrid);
+  document.querySelectorAll(".g-tile").forEach(t=>{
+    t.addEventListener("click", ()=>{
+      const idx = +t.dataset.idx;
+      const item = DATA[currentLang].gallery.items[idx];
+      document.getElementById("lightboxImg").style.background = gradients[idx % gradients.length];
+      document.getElementById("lightboxCap").textContent = item.cap;
+      document.getElementById("lightbox").classList.add("open");
+    });
+  });
+
+  // reviews
+  const initials = n => n.slice(0,2).toUpperCase();
+  const reviewGrid = document.getElementById("reviewGrid");
+  reviewGrid.innerHTML = d.reviews.items.map(r=>`
+    <div class="review-card">
+      <div class="review-quote-mark">"</div>
+      <p class="review-quote">${r.q}</p>
+      <div class="review-foot">
+        <div class="review-avatar">${initials(r.n)}</div>
+        <div class="review-name">${r.n}</div>
+      </div>
+    </div>
+  `).join("");
+  observeReveal(reviewGrid);
+
+  // chatbot: refresh greeting bubble language if chat empty or only greeting shown
+  if(chatHistory.length <= 1){
+    chatHistory = [{from:"bot", text:d.chatbot.greeting}];
+    renderChat();
+  }
+}
+
+/* ===================== scroll reveal ===================== */
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("in-view");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.15, rootMargin:"0px 0px -60px 0px"});
+
+function observeReveal(el){
+  if(el.classList.contains("reveal") || el.classList.contains("reveal-stagger")){
+    revealObserver.observe(el);
+  }
+}
+document.querySelectorAll(".reveal, .reveal-stagger").forEach(observeReveal);
+
+/* ===================== header scroll ===================== */
+const header = document.getElementById("siteHeader");
+function onScroll(){
+  header.classList.toggle("scrolled", window.scrollY > 40);
+  document.getElementById("toTop").classList.toggle("show", window.scrollY > 700);
+}
+window.addEventListener("scroll", onScroll);
+onScroll();
+
+/* ===================== lang switch ===================== */
+document.querySelectorAll(".lang-switch button").forEach(b=>{
+  b.addEventListener("click", ()=> render(b.dataset.lang));
+});
+
+/* ===================== mobile nav ===================== */
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+menuToggle.addEventListener("click", ()=>{
+  const open = mobileNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", open ? "true":"false");
+});
+mobileNav.querySelectorAll("a").forEach(a=> a.addEventListener("click", ()=>{
+  mobileNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded","false");
+}));
+
+/* ===================== lightbox ===================== */
+function closeLightbox(){ document.getElementById("lightbox").classList.remove("open"); }
+document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+document.getElementById("lightbox").addEventListener("click", (e)=>{
+  if(e.target.id === "lightbox") closeLightbox();
+});
+
+/* ===================== back to top ===================== */
+document.getElementById("toTop").addEventListener("click", ()=>{
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+
+/* ===================== cookie banner ===================== */
+const cookieBanner = document.getElementById("cookieBanner");
+setTimeout(()=> cookieBanner.classList.add("show"), 1000);
+document.getElementById("cookieAccept").addEventListener("click", ()=>{
+  cookieBanner.classList.remove("show");
+});
+
+/* ===================== contact form ===================== */
+document.getElementById("contactForm").addEventListener("submit", (e)=>{
+  e.preventDefault();
+  const note = document.getElementById("formNote");
+  note.classList.add("show");
+  e.target.reset();
+  setTimeout(()=> note.classList.remove("show"), 5000);
+});
+
+/* ===================== chatbot ===================== */
+const chatLauncher = document.getElementById("chatLauncher");
+const chatPanel = document.getElementById("chatPanel");
+const chatBody = document.getElementById("chatBody");
+let chatHistory = [];
+
+chatLauncher.addEventListener("click", ()=>{
+  const open = chatPanel.classList.toggle("open");
+  if(chatHistory.length === 0){
+    chatHistory.push({from:"bot", text:DATA[currentLang].chatbot.greeting});
+    renderChat();
+  }
+  if(open) document.getElementById("chatInput").focus();
+});
+document.getElementById("chatClose").addEventListener("click", ()=> chatPanel.classList.remove("open"));
+
+function renderChat(){
+  chatBody.innerHTML = chatHistory.map(m=>`<div class="chat-msg ${m.from}">${m.text}</div>`).join("");
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function chatReply(msg){
+  const c = DATA[currentLang].chatbot;
+  const m = msg.toLowerCase();
+  if(/nyitva|óra|program|hours|orar/.test(m)) return c.hours;
+  if(/ár|price|tarif|cost|lei/.test(m)) return c.prices;
+  if(/szolg|medence|pool|bazin|service|servici|szauna|sauna/.test(m)) return c.services;
+  if(/kapcsolat|telefon|email|e-mail|cím|address|contact|adres/.test(m)) return c.contact;
+  if(/park/.test(m)) return c.parking;
+  if(/szia|hello|hi|hey|buna|salut|üdv/.test(m)) return c.hello;
+  return c.fallback;
+}
+
+function sendChat(){
+  const input = document.getElementById("chatInput");
+  const val = input.value.trim();
+  if(!val) return;
+  chatHistory.push({from:"user", text: val.replace(/</g,"&lt;")});
+  input.value = "";
+  renderChat();
+  chatBody.insertAdjacentHTML("beforeend", `<div class="chat-msg bot typing" id="typingBubble"><span></span><span></span><span></span></div>`);
+  chatBody.scrollTop = chatBody.scrollHeight;
+  setTimeout(()=>{
+    document.getElementById("typingBubble")?.remove();
+    chatHistory.push({from:"bot", text: chatReply(val)});
+    renderChat();
+  }, 480);
+}
+document.getElementById("chatSend").addEventListener("click", sendChat);
+document.getElementById("chatInput").addEventListener("keydown", (e)=>{
+  if(e.key === "Enter") sendChat();
+});
+
+/* ===================== global keys ===================== */
+document.addEventListener("keydown", (e)=>{
+  if(e.key === "Escape"){
+    closeLightbox();
+    chatPanel.classList.remove("open");
+    mobileNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded","false");
+  }
+});
+
+/* ===================== init ===================== */
+document.getElementById("year").textContent = new Date().getFullYear();
+render("hu");
+</script>
+</body>
+</html>
